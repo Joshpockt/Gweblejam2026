@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5gudty3e7bqo"]
 
 [ext_resource type="Script" uid="uid://c4pmrdkstmaok" path="res://playerMover.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://xpirsjs3e6wp" path="res://interaction_ray.gd" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rt2ik"]
 height = 1.9453125
@@ -28,6 +29,13 @@ render_target_update_mode = 4
 
 [node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1875941060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7360188, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/Camera" unique_id=504461219]
+target_position = Vector3(0, 0, -3)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("2_onrkg")
 
 [node name="CamTarget" type="Node3D" parent="." unique_id=483713611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7211097, 0)
