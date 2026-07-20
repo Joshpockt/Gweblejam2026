@@ -16,6 +16,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 
 func cameraMovement(delta: float):
+	if tabout: return
 	mouseX = clamp(mouseX,-90,90)
 	rotation_degrees.y = mouseY;
 	camera.rotation_degrees.y = mouseY;
