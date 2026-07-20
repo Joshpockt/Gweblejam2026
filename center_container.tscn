@@ -5,6 +5,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0n8d"]
 shader = ExtResource("1_gsqjs")
 shader_parameter/can_interact = true
+shader_parameter/circleSize = 0.2
+shader_parameter/hollowSize = 0.2
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dklud"]
 size = Vector2(24, 24)
