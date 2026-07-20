@@ -689,9 +689,9 @@ flip_faces = true
 size = Vector3(2.5, 3, 1)
 
 [node name="RoomEntrance" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1185275914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0008545, 1.5, -3)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1.0925293, 3, 2.5)
 
 [node name="RoomEntrance10" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=796096152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.5, -3)
