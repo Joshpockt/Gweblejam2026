@@ -7,7 +7,9 @@ var tabout=false;
 var mouseX = 0;
 var mouseY = 0;
 const sensitivity = 10;
-@onready var camera: Camera3D = $Camera
+@onready var camera: Camera3D = $SubViewportContainer/SubViewport/Camera
+@onready var cam_target: Node3D = $CamTarget
+
 
 
 func _ready() -> void:
@@ -16,7 +18,9 @@ func _ready() -> void:
 func cameraMovement(delta: float):
 	mouseX = clamp(mouseX,-90,90)
 	rotation_degrees.y = mouseY;
+	camera.rotation_degrees.y = mouseY;
 	camera.rotation_degrees.x = mouseX;
+	camera.global_position=cam_target.global_position
 	
 	
 func _process(delta: float) -> void:

@@ -12,5 +12,20 @@ script = ExtResource("1_4flbx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_rt2ik")
 
-[node name="Camera" type="Camera3D" parent="." unique_id=1875941060]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=586139611]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1417639825]
+size = Vector2i(576, 324)
+
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1875941060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7360188, 0)
+
+[node name="CamTarget" type="Node3D" parent="." unique_id=483713611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7211097, 0)
