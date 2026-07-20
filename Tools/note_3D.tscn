@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cxdq4qtdx6f3b"]
+
+[ext_resource type="Script" uid="uid://c1pbmjsqph0oy" path="res://Tools/note_3D.gd" id="1_mmeqq"]
+
+[node name="Note3D" type="Label3D" unique_id=1577133897]
+billboard = 1
+script = ExtResource("1_mmeqq")

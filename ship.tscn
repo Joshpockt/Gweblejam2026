@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://co0gsv0pxx6lu"]
 
 [ext_resource type="PackedScene" uid="uid://c5gudty3e7bqo" path="res://player.tscn" id="1_l3rv8"]
+[ext_resource type="PackedScene" uid="uid://cxdq4qtdx6f3b" path="res://Tools/note_3D.tscn" id="2_4cq66"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cq66"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,7 +44,13 @@ shadow_enabled = true
 area_range = 6.0
 
 [node name="Stairwell4" type="AreaLight3D" parent="Lights" unique_id=1855196824]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9, 14.5)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9, 13.5)
+light_color = Color(1, 0.912, 0.76, 1)
+shadow_enabled = true
+area_range = 12.0
+
+[node name="Stairwell5" type="AreaLight3D" parent="Lights" unique_id=1330192112]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9, 22.5)
 light_color = Color(1, 0.912, 0.76, 1)
 shadow_enabled = true
 area_range = 12.0
@@ -119,6 +126,118 @@ area_range = 6.0
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="LevelGeometery" unique_id=1938028547]
 use_collision = true
 
+[node name="Escape Pod Room" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1305400026]
+
+[node name="Escape Pods" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Escape Pod Room" unique_id=440689301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, -18)
+flip_faces = true
+size = Vector3(8, 4, 13)
+
+[node name="Escapepod" type="CSGCylinder3D" parent="LevelGeometery/CSGCombiner3D/Escape Pod Room" unique_id=1282117755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 1.95, -18)
+operation = 2
+flip_faces = true
+radius = 1.0
+height = 3.0
+
+[node name="Escapepod2" type="CSGCylinder3D" parent="LevelGeometery/CSGCombiner3D/Escape Pod Room" unique_id=330929840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 1.95, -21)
+operation = 2
+flip_faces = true
+radius = 1.0
+height = 3.0
+
+[node name="Escapepod3" type="CSGCylinder3D" parent="LevelGeometery/CSGCombiner3D/Escape Pod Room" unique_id=1623180928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 1.95, -15)
+operation = 2
+flip_faces = true
+radius = 1.0
+height = 3.0
+
+[node name="StasisRoom" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=551753704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, -4)
+
+[node name="Room3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1511941304]
+flip_faces = true
+size = Vector3(8, 4, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1873893095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -5)
+operation = 2
+flip_faces = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1359152090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.5, -5)
+operation = 2
+flip_faces = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1502162215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -5)
+operation = 2
+flip_faces = true
+
+[node name="Helm" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=12685739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30.5)
+
+[node name="Helm" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Helm" unique_id=2124094849]
+flip_faces = true
+size = Vector3(16, 4, 8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Helm" unique_id=438394165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1.5)
+operation = 2
+flip_faces = true
+size = Vector3(6, 1, 2)
+
+[node name="EngineRoom" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=810170454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 14.5)
+
+[node name="EngineRoom" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/EngineRoom" unique_id=1641318920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
+flip_faces = true
+size = Vector3(16, 7, 19)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LevelGeometery/CSGCombiner3D/EngineRoom" unique_id=1076721781]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8, -1, 3.5)
+operation = 2
+flip_faces = true
+radius = 5.0
+height = 19.0
+sides = 12
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="LevelGeometery/CSGCombiner3D/EngineRoom" unique_id=1820056598]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8, -1, 3.5)
+operation = 2
+flip_faces = true
+radius = 5.0
+height = 19.0
+sides = 12
+
+[node name="Electircal" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1208507795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3, -4)
+
+[node name="Room6" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Electircal" unique_id=1406882414]
+flip_faces = true
+size = Vector3(8, 4, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Electircal" unique_id=738052199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.5, 6)
+operation = 2
+flip_faces = true
+size = Vector3(3, 3, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Electircal" unique_id=988822647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.5, 4)
+operation = 2
+flip_faces = true
+size = Vector3(3, 3, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/Electircal" unique_id=328510184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.5, 2)
+operation = 2
+flip_faces = true
+size = Vector3(3, 3, 1)
+
 [node name="Starwell" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1713754363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5.5)
 flip_faces = true
@@ -144,26 +263,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -2.5)
 flip_faces = true
 size = Vector3(5, 4, 10)
 
-[node name="EngineRoom" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1641318920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 14.5)
-flip_faces = true
-size = Vector3(16, 7, 12)
-
-[node name="Helm" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=2124094849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30.5)
-flip_faces = true
-size = Vector3(16, 4, 8)
-
-[node name="Room2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=440689301]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, -18)
-flip_faces = true
-size = Vector3(8, 4, 13)
-
-[node name="Room3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1511941304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, -4)
-flip_faces = true
-size = Vector3(8, 4, 13)
-
 [node name="Room4" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1915253096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, -18)
 flip_faces = true
@@ -176,11 +275,6 @@ size = Vector3(8, 4, 13)
 
 [node name="Room5" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=458343760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3, -4)
-flip_faces = true
-size = Vector3(8, 4, 13)
-
-[node name="Room6" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1406882414]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3, -4)
 flip_faces = true
 size = Vector3(8, 4, 13)
 
@@ -262,3 +356,57 @@ size = Vector3(3, 2, 4)
 [node name="Characters" type="Node3D" parent="." unique_id=2139002802]
 
 [node name="Mover" parent="Characters" unique_id=1676804080 instance=ExtResource("1_l3rv8")]
+
+[node name="Notes" type="Node3D" parent="." unique_id=919643412]
+
+[node name="Note3D" parent="Notes" unique_id=1577133897 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9535255, 1.000001, -4.469014)
+text = "\"Cryo room\""
+note_text = "\"Cryo room\""
+
+[node name="Note3D9" parent="Notes" unique_id=309110821 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4535255, 2.000001, -8.469014)
+text = "these are chairs trust"
+note_text = "these are chairs trust"
+
+[node name="Note3D2" parent="Notes" unique_id=674442827 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0464745, 1.000001, -4.469014)
+text = "\"Bathroom / WC\""
+note_text = "\"Bathroom / WC\""
+
+[node name="Note3D7" parent="Notes" unique_id=1792463686 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0464745, -3.999999, -4.469014)
+text = "Electrical room"
+note_text = "Electrical room"
+
+[node name="Note3D8" parent="Notes" unique_id=1760073117 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9535255, -3.999999, -4.469014)
+text = "Maintanance locker"
+note_text = "Maintanance locker"
+
+[node name="Note3D6" parent="Notes" unique_id=267401604 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046474457, -3.999999, 13.530986)
+text = "Engine Room"
+note_text = "Engine Room"
+
+[node name="Note3D3" parent="Notes" unique_id=1805233772 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0464745, 1.000001, -18.469013)
+text = "Escape pods"
+note_text = "Escape pods"
+
+[node name="Note3D5" parent="Notes" unique_id=1241440915 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9535255, 1.000001, -18.469013)
+text = "cafeteria"
+note_text = "cafeteria"
+
+[node name="Note3D4" parent="Notes" unique_id=1117468061 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046474457, 1.000001, -29.469013)
+text = "Helm"
+note_text = "Helm"
+
+[node name="Note3D10" parent="Notes" unique_id=1751194281 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046474457, 2.000001, -32.469013)
+text = "This would be like a console that would control the ship
+and display other information"
+note_text = "This would be like a console that would control the ship
+and display other information"
