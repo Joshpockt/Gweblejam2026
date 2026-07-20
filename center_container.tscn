@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://oqqklu3i4tig"]
+
+[ext_resource type="Shader" uid="uid://blpnn00vgj7or" path="res://crosshair.gdshader" id="1_gsqjs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0n8d"]
+shader = ExtResource("1_gsqjs")
+shader_parameter/can_interact = true
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dklud"]
+size = Vector2(24, 24)
+
+[node name="CenterContainer" type="CenterContainer" unique_id=402374707]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=146901112]
+material = SubResource("ShaderMaterial_k0n8d")
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_dklud")
