@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://co0gsv0pxx6lu"]
 
 [ext_resource type="PackedScene" uid="uid://c5gudty3e7bqo" path="res://player.tscn" id="1_l3rv8"]
+[ext_resource type="Shader" uid="uid://d0mj64vvcdmig" path="res://walls.gdshader" id="1_pmrbh"]
 [ext_resource type="PackedScene" uid="uid://cxdq4qtdx6f3b" path="res://Tools/note_3D.tscn" id="2_4cq66"]
+[ext_resource type="Texture2D" uid="uid://206n7t3yjwh2" path="res://wall_texture.png" id="2_o1dwe"]
 [ext_resource type="PackedScene" uid="uid://ccu1xyvyvc6nh" path="res://models/Chair.fbx" id="3_v4325"]
 [ext_resource type="Script" uid="uid://bt1bk7r33v0c0" path="res://interaction_box_3d.gd" id="4_c3vuw"]
 [ext_resource type="Script" uid="uid://cfy1q5wlsnq0n" path="res://InteractorsHandler.gd" id="4_xpsff"]
@@ -23,6 +25,18 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.01
 glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o1dwe"]
+render_priority = 0
+shader = ExtResource("1_pmrbh")
+shader_parameter/texture_x = ExtResource("2_o1dwe")
+shader_parameter/texture_z = ExtResource("2_o1dwe")
+shader_parameter/scale_x = -0.25
+shader_parameter/scale_y = 1.0
+shader_parameter/scale_z = -0.25
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/offset_z = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lb0c"]
 resource_name = "Material.004"
@@ -504,6 +518,7 @@ area_range = 6.0
 [node name="LevelGeometery" type="Node3D" parent="." unique_id=534656810]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="LevelGeometery" unique_id=1938028547]
+material_override = SubResource("ShaderMaterial_o1dwe")
 use_collision = true
 
 [node name="Escape Pod Room" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1305400026]
