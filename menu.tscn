@@ -17,9 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_ouk20")
 glow_enabled = true
 
-[sub_resource type="LabelSettings" id="LabelSettings_rt2ik"]
-font_size = 51
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rt2ik"]
 emission_shape = 3
 emission_box_extents = Vector3(0.095, 34.905, 2.945)
@@ -42,6 +39,9 @@ material = SubResource("StandardMaterial3D_g7vmx")
 radius = 0.051
 height = 0.102
 
+[sub_resource type="LabelSettings" id="LabelSettings_rt2ik"]
+font_size = 51
+
 [node name="Menu" type="Node" unique_id=781557886]
 script = ExtResource("1_lti8b")
 
@@ -52,8 +52,49 @@ environment = SubResource("Environment_mae5d")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=845243413]
-transform = Transform3D(0.80613714, -0.022716675, 0.59129256, 0.027313419, 0.9996262, 0.0011666119, -0.591098, 0.015209749, 0.8064563, 0.25456095, 1.240408, 2.9615326)
+[node name="Node3D" type="Node3D" parent="." unique_id=524832221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.248516, 0.09320676, 0)
+script = ExtResource("2_ouk20")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D" unique_id=291152224]
+size = Vector3(1.3146973, 0.2109375, 0.23535156)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D" unique_id=1541989743]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.77780557, 0, 3.2016416e-09)
+size = Vector3(1.0458984, 0.2109375, 0.27801514)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=594585493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -6.21326)
+cast_shadow = 0
+amount = 467
+lifetime = 7.91
+process_material = SubResource("ParticleProcessMaterial_rt2ik")
+draw_pass_1 = SubResource("SphereMesh_opbaf")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1807103506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -14.856586)
+cast_shadow = 0
+amount = 467
+lifetime = 7.91
+process_material = SubResource("ParticleProcessMaterial_rt2ik")
+draw_pass_1 = SubResource("SphereMesh_opbaf")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2001586342]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1671439870]
+handle_input_locally = false
+size = Vector2i(576, 324)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=845243413]
+transform = Transform3D(0.80613714, -0.022716677, 0.59129256, 0.027313419, 0.9996263, 0.0011666372, -0.591098, 0.015209751, 0.8064563, 0.25456095, 1.240408, 2.9615326)
 fov = 61.42041
 
 [node name="UI" type="Control" parent="." unique_id=1757188503]
@@ -90,30 +131,3 @@ offset_right = 223.0
 offset_bottom = 290.0
 text = "esex button
 "
-
-[node name="Node3D" type="Node3D" parent="." unique_id=524832221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.248516, 0.09320676, 0)
-script = ExtResource("2_ouk20")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D" unique_id=291152224]
-size = Vector3(1.3146973, 0.2109375, 0.23535156)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D" unique_id=1541989743]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.77780557, 0, 3.2016416e-09)
-size = Vector3(1.0458984, 0.2109375, 0.27801514)
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=594585493]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -6.21326)
-cast_shadow = 0
-amount = 467
-lifetime = 7.91
-process_material = SubResource("ParticleProcessMaterial_rt2ik")
-draw_pass_1 = SubResource("SphereMesh_opbaf")
-
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1807103506]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -14.856586)
-cast_shadow = 0
-amount = 467
-lifetime = 7.91
-process_material = SubResource("ParticleProcessMaterial_rt2ik")
-draw_pass_1 = SubResource("SphereMesh_opbaf")

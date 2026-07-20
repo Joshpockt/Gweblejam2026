@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5gudty3e7bqo" path="res://player.tscn" id="1_l3rv8"]
 [ext_resource type="PackedScene" uid="uid://cxdq4qtdx6f3b" path="res://Tools/note_3D.tscn" id="2_4cq66"]
+[ext_resource type="PackedScene" uid="uid://ccu1xyvyvc6nh" path="res://models/Chair.fbx" id="3_v4325"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cq66"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -98,7 +99,13 @@ shadow_enabled = true
 area_range = 6.0
 
 [node name="Room3" type="AreaLight3D" parent="Lights" unique_id=1189898555]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, -4)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, -6.5832176)
+light_color = Color(1, 0.912, 0.76, 1)
+shadow_enabled = true
+area_range = 6.0
+
+[node name="Room7" type="AreaLight3D" parent="Lights" unique_id=697812023]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, 0.17251587)
 light_color = Color(1, 0.912, 0.76, 1)
 shadow_enabled = true
 area_range = 6.0
@@ -160,21 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, -4)
 [node name="Room3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1511941304]
 flip_faces = true
 size = Vector3(8, 4, 13)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1873893095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -5)
-operation = 2
-flip_faces = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1359152090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.5, -5)
-operation = 2
-flip_faces = true
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D/StasisRoom" unique_id=1502162215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -5)
-operation = 2
-flip_faces = true
 
 [node name="Helm" type="CSGCombiner3D" parent="LevelGeometery/CSGCombiner3D" unique_id=12685739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30.5)
@@ -410,3 +402,12 @@ text = "This would be like a console that would control the ship
 and display other information"
 note_text = "This would be like a console that would control the ship
 and display other information"
+
+[node name="Chair" parent="." unique_id=1041730287 instance=ExtResource("3_v4325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4958487, 0.03125024, -8.906853)
+
+[node name="Chair2" parent="." unique_id=559116092 instance=ExtResource("3_v4325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.507237, 0.03125024, -8.906853)
+
+[node name="Chair3" parent="." unique_id=747466349 instance=ExtResource("3_v4325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.490231, 0.03125024, -8.906853)
