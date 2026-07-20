@@ -59,6 +59,12 @@ tab_out={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_2="Entity"
+3d_physics/layer_4="Interaction"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
