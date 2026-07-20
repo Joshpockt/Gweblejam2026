@@ -1,27 +1,119 @@
 [gd_scene format=3 uid="uid://bi1hwbyekbhpf"]
 
 [ext_resource type="Script" uid="uid://cb7ddx7h0o5pw" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://ng8suu5qs0vj" path="res://apenis.gd" id="2_ouk20"]
 
-[node name="Menu" type="Control" unique_id=892049236]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lti8b"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ouk20"]
+sky_material = SubResource("ProceduralSkyMaterial_lti8b")
+
+[sub_resource type="Environment" id="Environment_mae5d"]
+background_mode = 2
+sky = SubResource("Sky_ouk20")
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_rt2ik"]
+font_size = 51
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rt2ik"]
+emission_shape = 3
+emission_box_extents = Vector3(0.095, 34.905, 2.945)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 46.149998
+initial_velocity_max = 92.31
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7vmx"]
+shading_mode = 0
+disable_ambient_light = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_opbaf"]
+material = SubResource("StandardMaterial3D_g7vmx")
+radius = 0.051
+height = 0.102
+
+[node name="Menu" type="Node" unique_id=781557886]
+script = ExtResource("1_lti8b")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1524611410]
+environment = SubResource("Environment_mae5d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=127522299]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=845243413]
+transform = Transform3D(0.80613714, -0.022716675, 0.59129256, 0.027313419, 0.9996262, 0.0011666119, -0.591098, 0.015209749, 0.8064563, 0.25456095, 1.240408, 2.9615326)
+fov = 61.42041
+
+[node name="UI" type="Control" parent="." unique_id=1757188503]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lti8b")
 
-[node name="Button" type="Button" parent="." unique_id=1020468432]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -30.0
-offset_right = 109.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "gogogaga"
+[node name="Title" type="Label" parent="UI" unique_id=1615959189]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 162.0
+text = "Fuckass
+ Game"
+label_settings = SubResource("LabelSettings_rt2ik")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="UI" unique_id=1282251650]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 180.0
+offset_right = 239.0
+offset_bottom = 231.0
+text = "game on jerk off"
+
+[node name="exit" type="Button" parent="UI" unique_id=1660210672]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 239.0
+offset_right = 223.0
+offset_bottom = 290.0
+text = "esex button
+"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=524832221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.248516, 0.09320676, 0)
+script = ExtResource("2_ouk20")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D" unique_id=291152224]
+size = Vector3(1.3146973, 0.2109375, 0.23535156)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D" unique_id=1541989743]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.77780557, 0, 3.2016416e-09)
+size = Vector3(1.0458984, 0.2109375, 0.27801514)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=594585493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -6.21326)
+cast_shadow = 0
+amount = 467
+lifetime = 7.91
+process_material = SubResource("ParticleProcessMaterial_rt2ik")
+draw_pass_1 = SubResource("SphereMesh_opbaf")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1807103506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.446163, 1.5832267, -14.856586)
+cast_shadow = 0
+amount = 467
+lifetime = 7.91
+process_material = SubResource("ParticleProcessMaterial_rt2ik")
+draw_pass_1 = SubResource("SphereMesh_opbaf")
