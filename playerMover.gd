@@ -25,6 +25,7 @@ func cameraMovement(delta: float):
 	
 	
 func _process(delta: float) -> void:
+	$Center.visible=!tabout
 	cameraMovement(delta)
 
 func _input(event: InputEvent) -> void:
@@ -41,6 +42,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if tabout: return;
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

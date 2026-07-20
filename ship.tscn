@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ccu1xyvyvc6nh" path="res://models/Chair.fbx" id="3_v4325"]
 [ext_resource type="Script" uid="uid://bt1bk7r33v0c0" path="res://interaction_box_3d.gd" id="4_c3vuw"]
 [ext_resource type="Script" uid="uid://cfy1q5wlsnq0n" path="res://InteractorsHandler.gd" id="4_xpsff"]
-[ext_resource type="Texture2D" uid="uid://4jx8nmdcd1ui" path="res://icon.svg" id="5_78o8j"]
 [ext_resource type="FontFile" uid="uid://be5b15h1py5i1" path="res://AcPlus_IBM_BIOS.ttf" id="7_pb2vj"]
+[ext_resource type="Script" uid="uid://dpecqokrrol0b" path="res://AutomaticDoor.gd" id="7_qxn0r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cq66"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -149,7 +149,7 @@ albedo_color = Color(0.11020947, 0.19698969, 0.41185236, 1)
 albedo_color = Color(0.27133313, 0.31451866, 0.34149787, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt2ik"]
-size = Vector3(0.44311523, 0.42529297, 0.375)
+size = Vector3(3.4006348, 2.5461426, 4.191284)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xpsff"]
 font = ExtResource("7_pb2vj")
@@ -407,9 +407,9 @@ flip_faces = true
 size = Vector3(8, 4, 13)
 
 [node name="RoomEntrance2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1448848995]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0008242, 1.5, -19.007664)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1.0048828, 3, 2.5)
 
 [node name="RoomEntrance3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1212776662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3)
@@ -567,20 +567,21 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8m8cr")
 surface_material_override/1 = SubResource("StandardMaterial3D_jiyt1")
 
 [node name="LeverInteractor" type="Area3D" parent="Interactors/lever" unique_id=297797015]
-transform = Transform3D(8.89556, 0, 0, 0, 8.89556, 0, 0, 0, 8.89556, -0.0718677, 1.9334698, 1.0937195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0718677, 1.9334698, 1.0937195)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("4_c3vuw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactors/lever/LeverInteractor" unique_id=246188581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.060791016, -0.060058594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1212168, -0.39364624)
 shape = SubResource("BoxShape3D_rt2ik")
 
 [node name="Label" type="Label3D" parent="Interactors/lever/LeverInteractor" unique_id=1336403630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13915741, 0)
-visible = false
+transform = Transform3D(5.96, 0, 0, 0, 5.96, 0, 0, 0, 5.96, 0, 0.7940979, -1.7539229)
 billboard = 1
 text = "Lever"
+font = ExtResource("7_pb2vj")
+outline_size = 4
 
 [node name="UI" type="Control" parent="." unique_id=240942039]
 layout_mode = 3
@@ -589,26 +590,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Center" type="CenterContainer" parent="UI" unique_id=1375433952]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Crosshair" type="Control" parent="UI/Center" unique_id=610003617]
-layout_mode = 2
-
-[node name="Crosshair" type="TextureRect" parent="UI/Center/Crosshair" unique_id=1852100445]
-layout_mode = 0
-offset_left = -9.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = 9.0
-texture = ExtResource("5_78o8j")
-expand_mode = 1
 
 [node name="cutsceneText" type="Label" parent="UI" unique_id=543411182]
 layout_mode = 1
@@ -625,3 +606,20 @@ vertical_alignment = 1
 
 [node name="LeverCutscene" type="Node3D" parent="CutsceneTargets" unique_id=644148377]
 transform = Transform3D(0.33138227, -0.18094802, 0.92598253, -3.7252903e-09, 0.9814371, 0.19178449, -0.94349647, -0.06355399, 0.32523084, 2.423932, 2.017274, -30.521935)
+
+[node name="Doors" type="Node3D" parent="." unique_id=801373817]
+
+[node name="ADoor" type="Node3D" parent="Doors" unique_id=172915284 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8640487, 1.4765265, -19.0075)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("CSGBox3D")
+rightSide = NodePath("CSGBox3D2")
+Player = NodePath("../../Characters/Mover")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/ADoor" unique_id=1096369010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04248047, 0.6318817)
+size = Vector3(0.42016602, 3.0458984, 1.2651062)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Doors/ADoor" unique_id=2013827903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007865429, 0.04248047, -0.6354294)
+size = Vector3(0.42016602, 3.0458984, 1.2651062)

@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c4pmrdkstmaok" path="res://playerMover.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://xpirsjs3e6wp" path="res://interaction_ray.gd" id="2_onrkg"]
+[ext_resource type="Shader" uid="uid://blpnn00vgj7or" path="res://crosshair.gdshader" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rt2ik"]
 height = 1.9453125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqtel"]
+shader = ExtResource("3_i3pqv")
+shader_parameter/can_interact = false
+shader_parameter/circleSize = 0.1
+shader_parameter/hollowSize = 0.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sweqy"]
+size = Vector2(24, 24)
 
 [node name="Mover" type="CharacterBody3D" unique_id=1676804080]
 script = ExtResource("1_4flbx")
@@ -39,3 +49,23 @@ script = ExtResource("2_onrkg")
 
 [node name="CamTarget" type="Node3D" parent="." unique_id=483713611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7211097, 0)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1354786440]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Control" parent="Center" unique_id=1896237424]
+layout_mode = 2
+
+[node name="Circle" type="TextureRect" parent="Center/Crosshair" unique_id=2034288912]
+material = SubResource("ShaderMaterial_hqtel")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_sweqy")
