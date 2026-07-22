@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 			close.play()
 			var tween = get_tree().create_tween()
 			tween.set_trans(Tween.TRANS_QUAD)
+			tween.set_ease(Tween.EASE_IN)
 			tween.set_parallel(true)
 			tween.tween_property(leftSide, "position", originalLS, OpenSpeed)
 			tween.tween_property(rightSide, "position", originalRS, OpenSpeed)
