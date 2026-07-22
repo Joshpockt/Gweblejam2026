@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0qe2lh4qy55x"]
 
-[ext_resource type="Script" uid="uid://c4pmrdkstmaok" path="res://playerMover.gd" id="1_qrja6"]
+[ext_resource type="Script" uid="uid://hhf676xvljum" path="res://gui_3d.gd" id="2_feb8i"]
+[ext_resource type="FontFile" uid="uid://be5b15h1py5i1" path="res://AcPlus_IBM_BIOS.ttf" id="3_kj3p2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_co24e"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,8 +15,23 @@ background_mode = 2
 sky = SubResource("Sky_feb8i")
 glow_enabled = true
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rt2ik"]
-height = 1.9453125
+[sub_resource type="QuadMesh" id="QuadMesh_jn4p2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ybq6y"]
+viewport_path = NodePath("GUI3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11ixh"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ybq6y")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w078t"]
+size = Vector3(1, 1, 0.011962891)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lc7k4"]
+font = ExtResource("3_kj3p2")
+font_size = 34
 
 [node name="Testing" type="Node3D" unique_id=179840930]
 
@@ -31,12 +47,127 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19091797, 0)
 use_collision = true
 size = Vector3(19.318604, 0.61816406, 23.182617)
 
-[node name="Mover" type="CharacterBody3D" parent="." unique_id=2123139295]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1754361, 0)
-script = ExtResource("1_qrja6")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=886290446]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
 
-[node name="Collider" type="CollisionShape3D" parent="Mover" unique_id=53568246]
-shape = SubResource("CapsuleShape3D_rt2ik")
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1359347180]
+handle_input_locally = false
+scaling_3d_mode = 5
+audio_listener_enable_3d = true
+physics_object_picking = true
+physics_object_picking_sort = true
+physics_object_picking_first_only = true
+gui_embed_subwindows = true
+canvas_cull_mask = 4294966272
+size = Vector2i(576, 324)
+render_target_update_mode = 4
 
-[node name="Camera" type="Camera3D" parent="Mover" unique_id=784723606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7360188, 0)
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2018895538]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4338596, 1.7246513, -1.171895)
+current = true
+
+[node name="GUI3D" type="Node3D" parent="." unique_id=912427388]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4526385, 1.6172576, -1.771535)
+script = ExtResource("2_feb8i")
+
+[node name="Quad" type="MeshInstance3D" parent="GUI3D" unique_id=2114828967]
+transform = Transform3D(0.54110956, 0, 0, 0, 0.54110956, 0, 0, 0, 0.54110956, 0, 0, 0.29894447)
+mesh = SubResource("QuadMesh_jn4p2")
+surface_material_override/0 = SubResource("StandardMaterial3D_11ixh")
+
+[node name="Area3D" type="Area3D" parent="GUI3D/Quad" unique_id=619642324]
+transform = Transform3D(0.54110956, 0, 0, 0, 0.54110956, 0, 0, 0, 0.54110956, -0.4526385, 1.6172576, -1.4725906)
+top_level = true
+collision_layer = 3
+collision_priority = 5.0
+input_capture_on_drag = true
+priority = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI3D/Quad/Area3D" unique_id=1358958531]
+shape = SubResource("BoxShape3D_w078t")
+
+[node name="SubViewport" type="SubViewport" parent="GUI3D" unique_id=1472329923]
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+physics_object_picking_sort = true
+physics_object_picking_first_only = true
+gui_embed_subwindows = true
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="GUI3D/SubViewport" unique_id=1310146990]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GUI3D/SubViewport/Control" unique_id=2085859816]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 17.57
+offset_right = 226.5
+offset_bottom = 90.57
+grow_horizontal = 2
+text = "Invalid Security
+ Not Logged In.."
+label_settings = SubResource("LabelSettings_lc7k4")
+
+[node name="Usr" type="LineEdit" parent="GUI3D/SubViewport/Control" unique_id=1024379100]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.912994
+offset_top = -116.08
+offset_right = 103.91202
+offset_bottom = -71.71013
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Username"
+
+[node name="Pas" type="LineEdit" parent="GUI3D/SubViewport/Control" unique_id=2094575387]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.912994
+offset_top = -55.785004
+offset_right = 103.91202
+offset_bottom = -11.415131
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Password"
+
+[node name="Button" type="Button" parent="GUI3D/SubViewport/Control" unique_id=246258253]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -0.80999756
+offset_right = 30.0
+offset_bottom = 30.190308
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.325, 1.325)
+text = "Sign In"

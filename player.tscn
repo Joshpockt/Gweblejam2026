@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c4pmrdkstmaok" path="res://playerMover.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://xpirsjs3e6wp" path="res://interaction_ray.gd" id="2_onrkg"]
 [ext_resource type="Shader" uid="uid://blpnn00vgj7or" path="res://crosshair.gdshader" id="3_i3pqv"]
+[ext_resource type="FontFile" uid="uid://be5b15h1py5i1" path="res://AcPlus_IBM_BIOS.ttf" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://cy3lc4jq6att8" path="res://placeholdder.ogg" id="5_sweqy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rt2ik"]
 height = 1.9453125
@@ -15,6 +17,9 @@ shader_parameter/hollowSize = 0.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sweqy"]
 size = Vector2(24, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sweqy"]
+font = ExtResource("4_hqtel")
 
 [node name="Mover" type="CharacterBody3D" unique_id=1676804080]
 script = ExtResource("1_4flbx")
@@ -34,6 +39,10 @@ stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1417639825]
 handle_input_locally = false
+audio_listener_enable_3d = true
+physics_object_picking = true
+physics_object_picking_sort = true
+physics_object_picking_first_only = true
 size = Vector2i(576, 324)
 render_target_update_mode = 4
 
@@ -44,8 +53,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7360188, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 8
 collide_with_areas = true
-collide_with_bodies = false
 script = ExtResource("2_onrkg")
+
+[node name="Items" type="Node3D" parent="SubViewportContainer/SubViewport/Camera" unique_id=343737829]
+
+[node name="GasolineTank" type="Node3D" parent="SubViewportContainer/SubViewport/Camera/Items" unique_id=1295378515]
+visible = false
+
+[node name="blablabla" type="CSGBox3D" parent="SubViewportContainer/SubViewport/Camera/Items/GasolineTank" unique_id=811589884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87037325, -0.83137524, -0.99346685)
+size = Vector3(0.45654297, 0.74658203, 0.6807251)
 
 [node name="CamTarget" type="Node3D" parent="." unique_id=483713611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7211097, 0)
@@ -59,6 +76,7 @@ grow_vertical = 2
 
 [node name="Crosshair" type="Control" parent="Center" unique_id=1896237424]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Circle" type="TextureRect" parent="Center/Crosshair" unique_id=2034288912]
 material = SubResource("ShaderMaterial_hqtel")
@@ -68,4 +86,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_sweqy")
+
+[node name="ETO" type="Label" parent="." unique_id=1360630152]
+offset_left = 8.0
+offset_top = 620.0
+offset_right = 262.0
+offset_bottom = 643.0
+text = "(Press E to Interact)"
+label_settings = SubResource("LabelSettings_sweqy")
+
+[node name="DROP" type="Label" parent="." unique_id=1881069266]
+visible = false
+offset_left = 8.0
+offset_top = 599.0
+offset_right = 288.0
+offset_bottom = 622.0
+text = "(Press Q to Drop)"
+label_settings = SubResource("LabelSettings_sweqy")
+
+[node name="Sounds" type="Node3D" parent="." unique_id=1976377466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6944757, 0)
+
+[node name="Pickup" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1863806928]
+stream = ExtResource("5_sweqy")
+
+[node name="Drop" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1952221589]
+stream = ExtResource("5_sweqy")
+
+[node name="Ground" type="RayCast3D" parent="." unique_id=2090831870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5254519, 0)
+target_position = Vector3(0, -6, 0)

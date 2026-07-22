@@ -2,6 +2,10 @@ extends Node3D
 
 var toggled=false;
 
+@onready var open: AudioStreamPlayer3D = $Open
+@onready var close: AudioStreamPlayer3D = $Close
+
+
 @export_category("References")
 @export var leftSide:Node3D;
 @export var rightSide:Node3D;
@@ -27,11 +31,13 @@ func _process(delta: float) -> void:
 			var tween = get_tree().create_tween()
 			tween.set_trans(Tween.TRANS_QUAD)
 			tween.set_parallel(true)
+			open.play()
 			tween.tween_property(leftSide, "position", leftSide.position + Vector3(0,0,open_distance), OpenSpeed)
 			tween.tween_property(rightSide, "position", rightSide.position - Vector3(0,0,open_distance), OpenSpeed)
 	else:
 		if toggled:
 			toggled=false
+			close.play()
 			var tween = get_tree().create_tween()
 			tween.set_trans(Tween.TRANS_QUAD)
 			tween.set_parallel(true)

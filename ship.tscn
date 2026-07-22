@@ -10,6 +10,11 @@
 [ext_resource type="FontFile" uid="uid://be5b15h1py5i1" path="res://AcPlus_IBM_BIOS.ttf" id="7_pb2vj"]
 [ext_resource type="Script" uid="uid://dpecqokrrol0b" path="res://AutomaticDoor.gd" id="7_qxn0r"]
 [ext_resource type="Texture2D" uid="uid://b214mmw84vwpn" path="res://models/DoorPannel_door_tex.png" id="8_qxn0r"]
+[ext_resource type="Script" uid="uid://hhf676xvljum" path="res://gui_3d.gd" id="9_1nkuy"]
+[ext_resource type="PackedScene" uid="uid://2d6r1pbc0hek" path="res://models/Fridge.fbx" id="11_5inx3"]
+[ext_resource type="Script" uid="uid://benl13phupnth" path="res://item_interactor.gd" id="12_8o2k6"]
+[ext_resource type="Script" uid="uid://b27h1eyhvqbdn" path="res://EscapePodHandler.gd" id="13_c5rd1"]
+[ext_resource type="AudioStream" uid="uid://cy3lc4jq6att8" path="res://placeholdder.ogg" id="14_fmt4g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cq66"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -163,8 +168,37 @@ albedo_color = Color(0.11020947, 0.19698969, 0.41185236, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiyt1"]
 albedo_color = Color(0.27133313, 0.31451866, 0.34149787, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nkuy"]
+size = Vector3(3.7148438, 1.9373167, 4.3287964)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rt2ik"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt2ik"]
-size = Vector3(3.4006348, 2.5461426, 4.191284)
+size = Vector3(0.6614375, 0.57556105, 0.6245117)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rt2ik"]
+font = ExtResource("7_pb2vj")
+font_size = 34
+
+[sub_resource type="LabelSettings" id="LabelSettings_1nkuy"]
+font = ExtResource("7_pb2vj")
+font_size = 60
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rt2ik"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_g7vmx"]
+viewport_path = NodePath("Interactors/SecurityComputer/GUI3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tf0ms"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_g7vmx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tf0ms"]
+size = Vector3(1, 1, 0.011962891)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xpsff"]
 font = ExtResource("7_pb2vj")
@@ -405,6 +439,13 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36t11"]
 transparency = 1
 albedo_color = Color(1, 1, 0.6745098, 0.39215687)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5rd1"]
+size = Vector3(1.0195313, 1.0036621, 0.48657227)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rt2ik"]
+height = 3.090332
+radius = 0.98291016
 
 [node name="Ship" type="Node3D" unique_id=866638716]
 
@@ -654,9 +695,9 @@ flip_faces = true
 size = Vector3(8, 4, 13)
 
 [node name="Room5" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=458343760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0932007, -3, -3.2711792)
 flip_faces = true
-size = Vector3(8, 4, 13)
+size = Vector3(5.1864014, 4, 7.6151123)
 
 [node name="RoomEntrance2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1448848995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0008242, 1.5, -19.007664)
@@ -769,6 +810,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9535255, -3.999999, -4.4690
 text = "Maintanance locker"
 note_text = "Maintanance locker"
 
+[node name="Note3D11" parent="Notes" unique_id=852829746 instance=ExtResource("2_4cq66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7797484, -3.8287113, -6.0047593)
+text = "Gasoline tank trust"
+note_text = "Gasoline tank trust"
+
 [node name="Note3D6" parent="Notes" unique_id=267401604 instance=ExtResource("2_4cq66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046474457, -3.999999, 13.530986)
 text = "Engine Room"
@@ -830,15 +876,172 @@ collision_mask = 0
 script = ExtResource("4_c3vuw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactors/lever/LeverInteractor" unique_id=246188581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1212168, -0.39364624)
-shape = SubResource("BoxShape3D_rt2ik")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4403391, -0.91070557)
+shape = SubResource("BoxShape3D_1nkuy")
 
 [node name="Label" type="Label3D" parent="Interactors/lever/LeverInteractor" unique_id=1336403630]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.7940979, -1.7539229)
+transform = Transform3D(6.03, 0, 0, 0, 6.03, 0, 0, 0, 6.03, 0, 0.7940979, -1.7539229)
+visible = false
 billboard = 1
 text = "Lever"
 font = ExtResource("7_pb2vj")
 outline_size = 4
+
+[node name="SecurityComputer" type="Node3D" parent="Interactors" unique_id=1202515847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4554281, 1.2418238, -31.450743)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Interactors/SecurityComputer" unique_id=1401700139]
+material_override = SubResource("StandardMaterial3D_rt2ik")
+size = Vector3(0.595, 0.595, 0.595)
+
+[node name="ComputerInteractor" type="Area3D" parent="Interactors/SecurityComputer" unique_id=1005448885]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_c3vuw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactors/SecurityComputer/ComputerInteractor" unique_id=4343121]
+shape = SubResource("BoxShape3D_rt2ik")
+
+[node name="Label" type="Label3D" parent="Interactors/SecurityComputer/ComputerInteractor" unique_id=1634879658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48080432, 0)
+visible = false
+billboard = 1
+text = "Security 
+Interface"
+font = ExtResource("7_pb2vj")
+outline_size = 4
+
+[node name="Wrong" type="AudioStreamPlayer3D" parent="Interactors/SecurityComputer/ComputerInteractor" unique_id=1467834157]
+stream = ExtResource("14_fmt4g")
+
+[node name="Right" type="AudioStreamPlayer3D" parent="Interactors/SecurityComputer/ComputerInteractor" unique_id=1211203467]
+stream = ExtResource("14_fmt4g")
+
+[node name="GUI3D" type="Node3D" parent="Interactors/SecurityComputer" unique_id=1180172469]
+process_mode = 3
+script = ExtResource("9_1nkuy")
+
+[node name="SubViewport" type="SubViewport" parent="Interactors/SecurityComputer/GUI3D" unique_id=596122594]
+transparent_bg = true
+physics_object_picking = true
+physics_object_picking_sort = true
+physics_object_picking_first_only = true
+gui_embed_subwindows = true
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Interactors/SecurityComputer/GUI3D/SubViewport" unique_id=1790715056]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Interactors/SecurityComputer/GUI3D/SubViewport/Control" unique_id=1627458517]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 17.57
+offset_right = 226.5
+offset_bottom = 90.57
+grow_horizontal = 2
+text = "Invalid Security
+ Not Logged In.."
+label_settings = SubResource("LabelSettings_rt2ik")
+
+[node name="Usr" type="LineEdit" parent="Interactors/SecurityComputer/GUI3D/SubViewport/Control" unique_id=2010196347]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.912994
+offset_top = -116.08
+offset_right = 103.91202
+offset_bottom = -71.71013
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Username"
+
+[node name="Pas" type="LineEdit" parent="Interactors/SecurityComputer/GUI3D/SubViewport/Control" unique_id=544715567]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.912994
+offset_top = -55.785004
+offset_right = 103.91202
+offset_bottom = -11.415131
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Password"
+
+[node name="SignIn" type="Button" parent="Interactors/SecurityComputer/GUI3D/SubViewport/Control" unique_id=1503856560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -0.80999756
+offset_right = 30.0
+offset_bottom = 30.190308
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.325, 1.325)
+text = "Sign In"
+
+[node name="Exit" type="Button" parent="Interactors/SecurityComputer/GUI3D/SubViewport/Control" unique_id=1281908095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.955002
+offset_top = 45.484985
+offset_right = 25.470032
+offset_bottom = 76.484985
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.325, 1.325)
+text = "Exit"
+
+[node name="LoggedIn" type="Label" parent="Interactors/SecurityComputer/GUI3D/SubViewport" unique_id=188391494]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.5
+offset_top = -118.490005
+offset_right = 226.5
+offset_bottom = -45.48993
+grow_horizontal = 2
+grow_vertical = 2
+text = "Logged In"
+label_settings = SubResource("LabelSettings_1nkuy")
+horizontal_alignment = 1
+
+[node name="Quad" type="MeshInstance3D" parent="Interactors/SecurityComputer/GUI3D" unique_id=1098190752]
+transform = Transform3D(0.54110956, 0, 0, 0, 0.54110956, 0, 0, 0, 0.54110956, 0, 0, 0.29894447)
+mesh = SubResource("QuadMesh_rt2ik")
+surface_material_override/0 = SubResource("StandardMaterial3D_tf0ms")
+
+[node name="Area3D" type="Area3D" parent="Interactors/SecurityComputer/GUI3D/Quad" unique_id=1693551498]
+collision_layer = 2
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactors/SecurityComputer/GUI3D/Quad/Area3D" unique_id=576490293]
+shape = SubResource("BoxShape3D_tf0ms")
 
 [node name="UI" type="Control" parent="." unique_id=240942039]
 layout_mode = 3
@@ -847,6 +1050,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="cutsceneText" type="Label" parent="UI" unique_id=543411182]
 layout_mode = 1
@@ -864,6 +1068,9 @@ vertical_alignment = 1
 [node name="LeverCutscene" type="Node3D" parent="CutsceneTargets" unique_id=644148377]
 transform = Transform3D(0.33138227, -0.18094802, 0.92598253, -3.7252903e-09, 0.9814371, 0.19178449, -0.94349647, -0.06355399, 0.32523084, 2.423932, 2.017274, -30.521935)
 
+[node name="SecurityComputer" type="Node3D" parent="CutsceneTargets" unique_id=1096731224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4554281, 1.321059, -30.741251)
+
 [node name="Doors" type="Node3D" parent="." unique_id=801373817]
 
 [node name="ADoor" type="Node3D" parent="Doors" unique_id=172915284 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
@@ -872,7 +1079,6 @@ script = ExtResource("7_qxn0r")
 leftSide = NodePath("left")
 rightSide = NodePath("right")
 Player = NodePath("../../Characters/Mover")
-ProximityToOpen = 4
 
 [node name="right" type="MeshInstance3D" parent="Doors/ADoor" unique_id=1118732445]
 transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
@@ -883,6 +1089,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
 transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
 mesh = SubResource("ArrayMesh_ub17o")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor" unique_id=344022423]
+stream = ExtResource("14_fmt4g")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor" unique_id=2042884375]
+stream = ExtResource("14_fmt4g")
 
 [node name="ivbags" type="Node3D" parent="." unique_id=41766661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.372685, 0.010320234, -8.587456)
@@ -920,3 +1132,117 @@ size = Vector3(29.686523, 20, 67.49133)
 
 [node name="door" type="Node3D" parent="." unique_id=1099543049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5228004, 1.5000004, -19.227951)
+
+[node name="Fridge" parent="." unique_id=974756227 instance=ExtResource("11_5inx3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.608526, 9.536743e-07, -22.708546)
+
+[node name="Items" type="Node3D" parent="." unique_id=1211464776]
+
+[node name="GasolineTank" type="Area3D" parent="Items" unique_id=951838657]
+transform = Transform3D(0.7378636, 0, -0.6749498, 0, 1, 0, 0.6749498, 0, 0.7378636, 7.8409753, -4.5107164, -6.1859055)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("12_8o2k6")
+item_name = "GasolineTank"
+
+[node name="Collision" type="CollisionShape3D" parent="Items/GasolineTank" unique_id=1592175518]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 7.6293945e-05, 0)
+shape = SubResource("BoxShape3D_c5rd1")
+
+[node name="Label" type="Label3D" parent="Items/GasolineTank" unique_id=1675835195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.145195, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "Gasoline
+ Tank"
+font = ExtResource("7_pb2vj")
+outline_size = 4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Items/GasolineTank" unique_id=402859489]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+size = Vector3(1, 1, 0.43554688)
+
+[node name="Pods" type="Node3D" parent="." unique_id=1230879116]
+
+[node name="Pod2" type="Node3D" parent="Pods" unique_id=143303679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.965374, 2.0855255, -17.943657)
+
+[node name="Label3D" type="Label3D" parent="Pods/Pod2" unique_id=1248530313]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, 0.59312797, 1.4451723)
+text = "shits fucked"
+
+[node name="Pod3" type="Node3D" parent="Pods" unique_id=630476631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.965374, 2.0855255, -20.981997)
+
+[node name="Label3D" type="Label3D" parent="Pods/Pod3" unique_id=697632707]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, 0.59312797, 1.4451723)
+text = "shits fucked"
+
+[node name="Pod1" type="StaticBody3D" parent="Pods" unique_id=574231060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.965374, 2.0855255, -14.868567)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("13_c5rd1")
+no_fuel = true
+seized = true
+not_sealed = true
+invalid_security = true
+
+[node name="NF" type="Label3D" parent="Pods/Pod1" unique_id=207725729]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, 0.7024183, 1.4451723)
+modulate = Color(0.9019608, 0, 0, 1)
+text = "No Fuel"
+font = ExtResource("7_pb2vj")
+font_size = 22
+uppercase = true
+
+[node name="HoverInfo" type="Label3D" parent="Pods/Pod1" unique_id=1126365978]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.23087502, 0.017605305, -0.1404171)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "Repairs Needed 
+for operation
+"
+font = ExtResource("7_pb2vj")
+font_size = 22
+uppercase = true
+
+[node name="DS" type="Label3D" parent="Pods/Pod1" unique_id=1183622706]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, 0.44686794, 1.4451723)
+modulate = Color(0.9019608, 0, 0, 1)
+text = "ejector 
+seized"
+font = ExtResource("7_pb2vj")
+font_size = 22
+uppercase = true
+
+[node name="NS" type="Label3D" parent="Pods/Pod1" unique_id=2029862584]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, 0.15463686, 1.4451723)
+modulate = Color(0.9019608, 0, 0, 1)
+text = "Not Sealed"
+font = ExtResource("7_pb2vj")
+font_size = 22
+uppercase = true
+
+[node name="SI" type="Label3D" parent="Pods/Pod1" unique_id=549823464]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5271721, -0.11323118, 1.4451723)
+modulate = Color(0.9019608, 0, 0, 1)
+text = "Security 
+Invalid"
+font = ExtResource("7_pb2vj")
+font_size = 22
+uppercase = true
+
+[node name="Collision" type="CollisionShape3D" parent="Pods/Pod1" unique_id=1177069813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16131306, -0.13745499, -0.13598633)
+shape = SubResource("CylinderShape3D_rt2ik")
+
+[node name="Sounds" type="Node3D" parent="Pods/Pod1" unique_id=679878358]
+
+[node name="Fuel" type="AudioStreamPlayer3D" parent="Pods/Pod1/Sounds" unique_id=1386174833]
+stream = ExtResource("14_fmt4g")
+
+[node name="Error" type="AudioStreamPlayer3D" parent="Pods/Pod1/Sounds" unique_id=2051388022]
+stream = ExtResource("14_fmt4g")
