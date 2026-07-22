@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://2d6r1pbc0hek" path="res://models/Fridge.fbx" id="11_5inx3"]
 [ext_resource type="Script" uid="uid://benl13phupnth" path="res://item_interactor.gd" id="12_8o2k6"]
 [ext_resource type="Script" uid="uid://b27h1eyhvqbdn" path="res://EscapePodHandler.gd" id="13_c5rd1"]
-[ext_resource type="AudioStream" uid="uid://dg5atk1sp06x0" path="res://door_open.mp3" id="13_jy8bo"]
+[ext_resource type="AudioStream" uid="uid://d0f84ia2gtym7" path="res://door_open.mp3" id="13_jy8bo"]
 [ext_resource type="AudioStream" uid="uid://cy3lc4jq6att8" path="res://placeholdder.ogg" id="14_fmt4g"]
 [ext_resource type="AudioStream" uid="uid://ms2vpfy8bd7j" path="res://door_close.mp3" id="14_l1q5r"]
 
@@ -31,6 +31,9 @@ sky = SubResource("Sky_v4325")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.01
+ssao_enabled = true
+ssao_radius = 0.85
+ssao_intensity = 4.4
 glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o1dwe"]
@@ -456,107 +459,124 @@ environment = SubResource("Environment_c3vuw")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1709122317]
 
-[node name="Hall" type="AreaLight3D" parent="Lights" unique_id=242853369]
+[node name="Hall" type="OmniLight3D" parent="Lights" unique_id=139472839]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9, -3)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Stairwell" type="AreaLight3D" parent="Lights" unique_id=1474834041]
+[node name="Stairwell" type="OmniLight3D" parent="Lights" unique_id=853540888]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9, 5.4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Stairwell3" type="AreaLight3D" parent="Lights" unique_id=614955098]
+[node name="Stairwell3" type="OmniLight3D" parent="Lights" unique_id=388518640]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0999999, 5.4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Stairwell4" type="AreaLight3D" parent="Lights" unique_id=1855196824]
+[node name="Stairwell4" type="OmniLight3D" parent="Lights" unique_id=171556956]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9, 13.5)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 12.0
+omni_range = 10.0
 
-[node name="Stairwell5" type="AreaLight3D" parent="Lights" unique_id=1330192112]
+[node name="Stairwell5" type="OmniLight3D" parent="Lights" unique_id=403059110]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9, 22.5)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 12.0
+omni_range = 10.0
 
-[node name="Stairwell2" type="OmniLight3D" parent="Lights" unique_id=1011288158]
+[node name="Stairwell2" type="OmniLight3D" parent="Lights" unique_id=464321926]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10, 0.9000001, 5.4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-omni_range = 6.0
+omni_range = 10.0
 
-[node name="Hall2" type="AreaLight3D" parent="Lights" unique_id=1393517554]
+[node name="Hall2" type="OmniLight3D" parent="Lights" unique_id=1325070168]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9, -11)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Hall4" type="AreaLight3D" parent="Lights" unique_id=790450431]
+[node name="Hall4" type="OmniLight3D" parent="Lights" unique_id=555729189]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0999999, -3)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Hall3" type="AreaLight3D" parent="Lights" unique_id=1611301460]
+[node name="Hall3" type="OmniLight3D" parent="Lights" unique_id=1788957033]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9, -19)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Helm" type="AreaLight3D" parent="Lights" unique_id=175800659]
+[node name="Helm" type="OmniLight3D" parent="Lights" unique_id=2060701046]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9, -30.507551)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 8.0
+omni_range = 10.0
 
-[node name="Room" type="AreaLight3D" parent="Lights" unique_id=1678697125]
+[node name="Room" type="OmniLight3D" parent="Lights" unique_id=2097206829]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.5, 3.9, -4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room2" type="AreaLight3D" parent="Lights" unique_id=568405237]
+[node name="Room2" type="OmniLight3D" parent="Lights" unique_id=419180299]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.5, 3.9, -18)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room3" type="AreaLight3D" parent="Lights" unique_id=1189898555]
+[node name="Room3" type="OmniLight3D" parent="Lights" unique_id=1640276318]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, -6.5832176)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room7" type="AreaLight3D" parent="Lights" unique_id=697812023]
+[node name="Room7" type="OmniLight3D" parent="Lights" unique_id=544145838]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, 0.17251587)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room5" type="AreaLight3D" parent="Lights" unique_id=1666328054]
+[node name="Room5" type="OmniLight3D" parent="Lights" unique_id=1288464163]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.5, -1.0999999, -4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room6" type="AreaLight3D" parent="Lights" unique_id=500666170]
+[node name="Room6" type="OmniLight3D" parent="Lights" unique_id=966376321]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, -1.0999999, -4)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
-[node name="Room4" type="AreaLight3D" parent="Lights" unique_id=2060157848]
+[node name="Room4" type="OmniLight3D" parent="Lights" unique_id=1977148494]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 3.9, -18.1)
-light_color = Color(1, 0.912, 0.76, 1)
+light_color = Color(1, 0.85333335, 0.6, 1)
+light_energy = 0.225
 shadow_enabled = true
-area_range = 6.0
+omni_range = 10.0
 
 [node name="LevelGeometery" type="Node3D" parent="." unique_id=534656810]
 
