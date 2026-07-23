@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2jwdj1dkmtdo"]
+
+[ext_resource type="Texture2D" uid="uid://c0va0jyw5dle7" path="res://models/Paper.png" id="1_7wx31"]
+
+[resource]
+resource_name = "Paper.png"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_7wx31")
+emission_enabled = true
+texture_filter = 0

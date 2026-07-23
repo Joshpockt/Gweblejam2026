@@ -39,7 +39,25 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=2
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Fridge.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/Fridge.png.tres",
+"use_external/path": "uid://i1ql08tgnxfb"
+},
+"MagnetsBiatch.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/MagnetsBiatch.png.tres",
+"use_external/path": "uid://lsyltsupat1g"
+},
+"Paper.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/Paper.png.tres",
+"use_external/path": "uid://2jwdj1dkmtdo"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

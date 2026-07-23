@@ -1331,12 +1331,12 @@ flip_faces = true
 size = Vector3(3, 3, 1)
 
 [node name="Starwell" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1713754363]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0035152, 2, 5.5076847)
 flip_faces = true
 size = Vector3(13, 4, 4)
 
 [node name="Starwell2" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=593747621]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.014053, -3.0088937, 5.5111313)
 flip_faces = true
 size = Vector3(13, 4, 4)
 
@@ -1351,7 +1351,7 @@ flip_faces = true
 size = Vector3(5, 4, 28)
 
 [node name="LowerHall" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1412520870]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018604994, -3.0066128, -2.507079)
 flip_faces = true
 size = Vector3(5, 4, 10)
 
@@ -1366,7 +1366,7 @@ flip_faces = true
 size = Vector3(8, 4, 13)
 
 [node name="Room5" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=458343760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0932007, -3, -3.2711792)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.084256, -3, -3.2743316)
 flip_faces = true
 size = Vector3(5.1864014, 4, 7.6151123)
 
@@ -1381,14 +1381,14 @@ flip_faces = true
 size = Vector3(0.24841309, 3, 6.543213)
 
 [node name="RoomEntrance3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1212776662]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3.0250244)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1, 3, 2.8063965)
 
 [node name="RoomEntrance4" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1734594418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -19.00476)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1, 3, 2.7995605)
 
 [node name="RoomEntrance5" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=432981020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -26)
@@ -1401,34 +1401,34 @@ flip_faces = true
 size = Vector3(2.5, 3, 1)
 
 [node name="RoomEntrance6" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=80707009]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065307617, 1.5, 3)
 flip_faces = true
-size = Vector3(2.5, 3, 1)
+size = Vector3(2.8209229, 3, 1.2685547)
 
 [node name="RoomEntrance7" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1168616126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 3)
 flip_faces = true
-size = Vector3(2.5, 3, 1)
+size = Vector3(2.5, 3, 1.1826172)
 
 [node name="RoomEntrance8" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=284369295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 8)
 flip_faces = true
-size = Vector3(2.5, 3, 1)
+size = Vector3(2.5, 3, 1.1835938)
 
 [node name="RoomEntrance" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1185275914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0008545, 1.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0008545, 1.5, -3.0215607)
 flip_faces = true
-size = Vector3(1.0925293, 3, 2.5)
+size = Vector3(1.0925293, 3, 2.82547)
 
 [node name="RoomEntrance10" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=796096152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9921875, -3.5, -3.0325928)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1.0859375, 3, 2.808838)
 
 [node name="RoomEntrance12" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=890260389]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3.5, -3.0280762)
 flip_faces = true
-size = Vector3(1, 3, 2.5)
+size = Vector3(1.1884766, 3, 2.8237305)
 
 [node name="Stairs" type="CSGPolygon3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1669692773]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0, 3.5)
@@ -1757,6 +1757,181 @@ stream = ExtResource("13_jy8bo")
 max_polyphony = 3
 
 [node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor" unique_id=2042884375]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor2" type="Node3D" parent="Doors" unique_id=1539092651 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5708835, 1.4765265, -19.02175)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor2" unique_id=907590609]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor2" unique_id=2106244188]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor2" unique_id=1016347559]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor2" unique_id=26858984]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor3" type="Node3D" parent="Doors" unique_id=1023764706 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5708835, 1.4765265, -3.0348146)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor3" unique_id=35813674]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor3" unique_id=1125018825]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor3" unique_id=814808838]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor3" unique_id=1930833117]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor4" type="Node3D" parent="Doors" unique_id=1429835415 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.874762, 1.4765265, -3.0348146)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor4" unique_id=1325016410]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor4" unique_id=236371006]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor4" unique_id=1173260613]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor4" unique_id=713870625]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor7" type="Node3D" parent="Doors" unique_id=147433856 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.874762, -3.5357966, -3.0348146)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor7" unique_id=1857756431]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor7" unique_id=134805763]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor7" unique_id=421271432]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor7" unique_id=662298503]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor8" type="Node3D" parent="Doors" unique_id=413112974 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.523788, -3.5357966, -3.0348146)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor8" unique_id=1926378113]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor8" unique_id=1031137736]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor8" unique_id=1559497414]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor8" unique_id=1913643779]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor5" type="Node3D" parent="Doors" unique_id=1812577372 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.015051862, 1.4765265, 2.9236674)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor5" unique_id=217054744]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor5" unique_id=2033962870]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor5" unique_id=1170107640]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor5" unique_id=392632003]
+stream = ExtResource("14_l1q5r")
+max_polyphony = 3
+
+[node name="ADoor6" type="Node3D" parent="Doors" unique_id=1438960139 node_paths=PackedStringArray("leftSide", "rightSide", "Player")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.00014187116, 1.4765265, -25.53129)
+script = ExtResource("7_qxn0r")
+leftSide = NodePath("left")
+rightSide = NodePath("right")
+Player = NodePath("../../Characters/Mover")
+
+[node name="right" type="MeshInstance3D" parent="Doors/ADoor6" unique_id=1337142563]
+transform = Transform3D(-4.371139e-06, -12.154205, -6.5567074e-06, 0, -5.312772e-07, 149.99998, -100, 5.312772e-07, 2.866028e-13, 0.18871832, 0.023473859, -0.70861816)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="left" type="MeshInstance3D" parent="Doors/ADoor6" unique_id=887820291]
+transform = Transform3D(-4.371139e-06, 12.154205, 6.5567074e-06, 0, -5.312772e-07, 149.99998, 100, 5.312772e-07, 2.866028e-13, 0.18871856, 0.023473859, 0.7218895)
+mesh = SubResource("ArrayMesh_ub17o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwjgr")
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Doors/ADoor6" unique_id=692175296]
+stream = ExtResource("13_jy8bo")
+max_polyphony = 3
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Doors/ADoor6" unique_id=1843274587]
 stream = ExtResource("14_l1q5r")
 max_polyphony = 3
 

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://lsyltsupat1g"]
+
+[ext_resource type="Texture2D" uid="uid://d0tcfw57tw3ps" path="res://models/MagnetsBiatch.png" id="1_r0iap"]
+
+[resource]
+resource_name = "MagnetsBiatch.png"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_r0iap")
+emission_enabled = true
+texture_filter = 0
