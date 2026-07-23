@@ -1341,9 +1341,9 @@ flip_faces = true
 size = Vector3(13, 4, 4)
 
 [node name="Starwell3" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1470471327]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0011997, -0.5, 5.499104)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.5, 5.5)
 flip_faces = true
-size = Vector3(7, 1, 4)
+size = Vector3(7, 9, 4)
 
 [node name="UpperHall" type="CSGBox3D" parent="LevelGeometery/CSGCombiner3D" unique_id=1130184732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.291006e-05, 1.999692, -11.499996)
