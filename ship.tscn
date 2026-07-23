@@ -174,7 +174,7 @@ albedo_color = Color(0.11020947, 0.19698969, 0.41185236, 1)
 albedo_color = Color(0.27133313, 0.31451866, 0.34149787, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1nkuy"]
-size = Vector3(3.7148438, 1.9373167, 4.3287964)
+size = Vector3(3.7148438, 2.7054749, 4.430023)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rt2ik"]
 albedo_color = Color(0, 0, 0, 1)
@@ -1538,7 +1538,7 @@ collision_mask = 0
 script = ExtResource("4_c3vuw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactors/lever/LeverInteractor" unique_id=246188581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4403391, -0.91070557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.82441807, -0.8601074)
 shape = SubResource("BoxShape3D_1nkuy")
 
 [node name="Label" type="Label3D" parent="Interactors/lever/LeverInteractor" unique_id=1336403630]
